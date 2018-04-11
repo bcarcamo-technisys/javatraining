@@ -23,6 +23,11 @@ class SimpleTest {
 			System.out.print("Age: ");
 			int age = console.nextInt();
 			
+			if( (age < 6 || age > 13) || (level < 1 || level > 8) ) {
+				System.out.println("Age or Level invalid");
+				return;
+			}
+			
 			System.out.println();
 			String access = (age >= level + 5) ? "Permited" : "Denied";
 			String msg = "The access to the school in this level is " + access;
@@ -44,9 +49,21 @@ class CompleteTest {
 			int age = console.nextInt();
 			
 			System.out.println();
-			Levels maxLevel = Levels.values()[age - 4];
-			String msg = "The maximum level that could be accessed is " + maxLevel;
-			System.out.println(msg);
+			
+			Levels minLevel, maxLevel;
+			if(age < 4) {
+				System.out.println("Must wait to enter to the school system");
+				return;
+			} else if(age >= 20) {
+				System.out.println("Too old to enter to the regular school system");
+				return;
+			} else {
+				minLevel = age < 6 ? Levels.PREKINDER : Levels.values()[age - 6];
+				maxLevel = age > 17 ? Levels.CUARTO_MEDIO : Levels.values()[age - 4];
+			}
+			
+			System.out.println("The minimum level that could be accessed is " + minLevel);
+			System.out.println("The maximum level that could be accessed is " + maxLevel);
 			
 		}
 
