@@ -64,7 +64,7 @@ public class E04_EmailValidator {
 
 						// isValid = domainPart.indexOf(_dotCODE) < domainPart.length() - 2;
 						// The last dot in the domain-part must be almost 2 characters away from the end
-						if(domainPart.indexOf(_dotCODE) < domainPart.length() - 2) {
+						if(domainPart.lastIndexOf(_dotCODE) < domainPart.length() - 2) {
 							isValid = true;
 						} else {
 							isValid = false;
