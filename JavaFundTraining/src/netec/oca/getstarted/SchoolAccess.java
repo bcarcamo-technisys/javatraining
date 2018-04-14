@@ -6,7 +6,7 @@ public class SchoolAccess {
 
 	public static void main(String[] args) {
 		
-		CompleteTest.test();
+		SimpleTest.test();
 		
 	}
 
@@ -28,10 +28,9 @@ class SimpleTest {
 				return;
 			}
 			
-			System.out.println();
 			String access = (age >= level + 5) ? "Permited" : "Denied";
 			String msg = "The access to the school in this level is " + access;
-			System.out.println(msg);
+			System.out.println("\n" + msg);
 			
 		}
 
