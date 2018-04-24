@@ -22,7 +22,7 @@ public class E05_MultiArgMethod {
 	}
 	
 	// The Variable Length Arguments are optional and must be at the end
-	private static void printer(boolean index, String ...texts) {
+	private static void printer(boolean index, String ... texts) {
 		int i=1;
 		for(String text : texts) {
 			if(index) System.out.printf("%-2s ", i++);
@@ -30,7 +30,7 @@ public class E05_MultiArgMethod {
 		}
 	}
 	
-	private static void printer(boolean index, Object ...objs) {
+	private static void printer(boolean index, Object ... objs) {
 		int i=1;
 		for(Object obj : objs) {
 			if(index) System.out.printf("%-2s ", i++);
