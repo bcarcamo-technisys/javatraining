@@ -15,16 +15,40 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.NavigableSet;
+import java.util.Queue;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.LinkedTransferQueue;
 
 public class E01_CollectionInterfaces {
 
 	@SuppressWarnings({ "rawtypes", "unused" })
 	public static void main(String[] args) {
-
+		
+		/*
+		 * Iterable(I) <- Collection(I) <- List(I)  <- ArrayList(C)
+		 *                                          <- LinkedList(C)
+		 *                              <- Set(I)   <- HashSet(C)       <- LinkedHashSet(C)
+		 *                                          <- SortedSet(I)     <- NavigableSet(I)  <- TreeSet(C)
+		 *                              <- Queue(I) <- Deque(I)         <- BlockingDeque(I) <- LinkedBlockingDeque(C)
+		 *                                          <- TransferQueue(I) <- LinkedTransferQueue(C)
+		 *                                          <- BlockingQueue(I) <- ArrayBlockingQueue(C)
+		 *                                                              <- LinkedBlockingQueue(C)
+		 *                                                              
+		 *                                 Map(I)   <- HashMap(C)       <- LinkedHashMap(C)
+		 *                                          <- SortedMap(I)     <- NavigableMap(I)  <- TreeMap(C) 
+		 * 
+		 * 
+		 * RandomAccess(I) <- ArrayList, Vector, Stack
+		 * Cloneable(I), Serializable(I) <- All Collection Implementations
+		 * 
+		 */
+			
 		class AdapterCollection implements Collection {
 			public boolean add(Object e) { return false; }
 			public boolean addAll(Collection c) { return false; }
@@ -71,34 +95,21 @@ public class E01_CollectionInterfaces {
 		
 		Set set1 = new HashSet();
 		Set set2 = new LinkedHashSet();
+		Set set3 = new TreeSet();
 		
-		class AdapterSortedSet extends AdapterSet implements SortedSet {
-			public Comparator comparator() { return null; }
-			
-			public Object first() { return null; }
-			public Object last() { return null; }
-			
-			public SortedSet headSet(Object toElement) { return null; }
-			public SortedSet tailSet(Object fromElement) { return null; }
-			public SortedSet subSet(Object fromElement, Object toElement) { return null; }
+		class AdapterQueue extends AdapterCollection implements Queue {
+			public boolean offer(Object e) { return false; }
+			public Object remove() { return null; }
+			public Object poll() { return null; }
+			public Object element() { return null; }
+			public Object peek() { return null; }
 		}
 		
-		class AdapterNavigableSet extends AdapterSortedSet implements NavigableSet {
-			public Object lower(Object e) { return null; }
-			public Object floor(Object e) { return null; }
-			public Object ceiling(Object e) { return null; }
-			public Object higher(Object e) { return null; }
-			public Object pollFirst() { return null; }
-			public Object pollLast() { return null; }
-			public NavigableSet descendingSet() { return null; }
-			public Iterator descendingIterator() { return null; }
-			public NavigableSet subSet(Object fromElement, boolean fromInclusive, Object toElement,
-					boolean toInclusive) { return null; }
-			public NavigableSet headSet(Object toElement, boolean inclusive) { return null; }
-			public NavigableSet tailSet(Object fromElement, boolean inclusive) { return null; }
-		}
-		
-		NavigableSet navigableset1 = new TreeSet();
+		Queue queue1 = new ArrayDeque();
+		Queue queue2 = new LinkedBlockingDeque();
+		Queue queue3 = new LinkedTransferQueue();
+		Queue queue4 = new LinkedBlockingQueue();
+		Queue queue5 = new ArrayBlockingQueue(0);
 		
 		class AdapterMap implements Map {
 			public int size() { return 0; }
@@ -123,8 +134,6 @@ public class E01_CollectionInterfaces {
 		Map map1 = new HashMap();
 		Map map2 = new Hashtable();
 		Map map3 = new TreeMap();
-		
-		Deque deque1 = new ArrayDeque();
 		
 	}
 

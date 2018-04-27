@@ -1,4 +1,4 @@
-package P10_Interfaces;
+package P11_Interfaces;
 
 import java.util.Scanner;
 import java.util.function.DoubleFunction;

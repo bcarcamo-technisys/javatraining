@@ -1,4 +1,4 @@
-package P10_Interfaces;
+package P11_Interfaces;
 
 import java.util.Scanner;
 import java.util.function.Predicate;
@@ -48,5 +48,5 @@ public class E06_Predicate {
 	};
 
 	private static final Predicate<String> NumberValidator  = t -> t.matches("^[0-9]+$") ? true : false;
-
+	
 }

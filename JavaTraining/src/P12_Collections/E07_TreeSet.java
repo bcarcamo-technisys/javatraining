@@ -3,7 +3,7 @@ package P12_Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class E05_TreeSet {
+public class E07_TreeSet {
 
 	public static void main(String[] args) {
 		

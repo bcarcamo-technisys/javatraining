@@ -1,8 +1,8 @@
-package P10_Interfaces;
+package P11_Interfaces;
 
 import java.util.Scanner;
 
-public class E02_DefaultInterfaceMethod {
+public class E03_InterfaceHeritage {
 
 	public static void main(String[] args) {
 
@@ -28,14 +28,19 @@ public class E02_DefaultInterfaceMethod {
 
 	}
 	
-	interface IOperation {
-		
-		public double calculate(double num1, double num2);
+	interface IStaticNomrable {
 		
 		default String getName() {
 			return this.getClass().getName().split("[$]")[1];
 		}
 		
+	}
+
+	@FunctionalInterface
+	interface IOperation extends IStaticNomrable {
+		
+		public double calculate(double num1, double num2);
+				
 	}
 
 	static class Addition implements IOperation {

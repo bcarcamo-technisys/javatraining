@@ -1,4 +1,4 @@
-package P11_Generics;
+package P10_Generics;
 
 public class E01_GenericBox {
 
