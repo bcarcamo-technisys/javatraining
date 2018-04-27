@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E05_MyFloats {
+public class E06_MyFloats {
 
 	public static void main(String[] args) {
 		

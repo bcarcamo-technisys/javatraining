@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E06_MyFloatCasting {
+public class E07_MyFloatCasting {
 
 	public static void main(String[] args) {
 		

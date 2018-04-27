@@ -5,7 +5,7 @@ public abstract class Person {
 	public static void main(String[] args) {
 		
 		Person luis = new Employee("Luis", "Vendedor");
-		Person pepe = new Client("Luis", "Coca Cola");
+		Person pepe = new Client("Luis", "Coca Cola");;
 		
 		System.out.println(luis);
 		System.out.println(pepe);

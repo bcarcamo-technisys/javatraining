@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E07_MyBetweenVariables {
+public class E08_MyBetweenVariables {
 
 	public static void main(String[] args) {
 		

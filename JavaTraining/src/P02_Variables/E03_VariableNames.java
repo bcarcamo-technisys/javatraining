@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E02_VariableNames {
+public class E03_VariableNames {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {

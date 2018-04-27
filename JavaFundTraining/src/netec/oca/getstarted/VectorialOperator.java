@@ -59,7 +59,6 @@ public class VectorialOperator {
 			}
 			
 			printVector(result, "Result");
-			printVector(vectorA, "VectorA");
 			
 		}
 		

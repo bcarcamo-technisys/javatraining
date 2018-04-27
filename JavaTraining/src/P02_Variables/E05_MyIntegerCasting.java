@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E04_MyIntegerCasting {
+public class E05_MyIntegerCasting {
 
 	public static void main(String[] args) {
 		

@@ -1,6 +1,6 @@
 package P02_Variables;
 
-public class E03_MyIntegers {
+public class E04_MyIntegers {
 
 	public static void main(String[] args) {
 		
