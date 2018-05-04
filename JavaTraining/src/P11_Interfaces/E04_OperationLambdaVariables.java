@@ -21,6 +21,7 @@ public class E04_OperationLambdaVariables {
 			operations[3] = Division;
 			
 			for(IOperation oper : operations) {
+				System.out.println(oper.getClass().getName());
 				System.out.println(oper.calculate(num1, num2));
 			}
 			

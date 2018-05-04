@@ -7,6 +7,7 @@ public class E05_GenericsWildcard_Super {
 		for(int i=0; i<4; i++) {
 			Printer.print(new Box<SuperClass>(new SuperClass()));
 			Printer.print(new Box<SubClass>(new SubClass()));
+			Printer.print(new Box<Object>(new Object()));
 		}
 		
 	}

@@ -47,6 +47,6 @@ public class E06_Predicate {
 		
 	};
 
-	private static final Predicate<String> NumberValidator  = t -> t.matches("^[0-9]+$") ? true : false;
+	private static final Predicate<String> NumberValidator  = t -> t.matches("^[0-9]+$");
 	
 }

@@ -17,7 +17,7 @@ public class E05_MultiArgMethod {
 		System.out.println();
 		
 		int[] numInt = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		printer(true, numInt);
+		printer(true, numInt, "Otro Object");
 		
 	}
 	
