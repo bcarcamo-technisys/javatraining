@@ -1,6 +1,7 @@
 package P12_Collections;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -16,7 +17,7 @@ public class E03_ArrayList_Object {
 		
 		printArray(arreglo);
 		
-		int[] arreglo_filtrado = filterArray(arreglo, 2);
+		int[] arreglo_filtrado = filterArray(arreglo, 3);
 		
 		printArray(arreglo_filtrado);
 
@@ -28,7 +29,7 @@ public class E03_ArrayList_Object {
 		
 		printList(lista);
 		
-		List lista_filtrada = filterList(lista, 2);
+		List lista_filtrada = filterList(lista, 3);
 		
 		printList(lista_filtrada);
 		
@@ -66,7 +67,7 @@ public class E03_ArrayList_Object {
 	}
 
 	private static List loadList(int size) {
-		List list = new ArrayList(); 
+		List list = new ArrayList(size); 
 		for(int i=0; i<size; i++) {
 			list.add((new Random()).nextInt());
 		}
@@ -91,5 +92,18 @@ public class E03_ArrayList_Object {
 		
 		return result;
 	}
+	
+	@SuppressWarnings("unused")
+	private static Integer[] filterList(int[] arreglo, int multiplier) {
+		List result = Arrays.asList(arreglo);
+		for(int value : arreglo) {
+			int value_int = (Integer) value;
+			if(value_int % multiplier == 0)
+				result.add(value_int);
+		}
+		
+		return (Integer[]) result.toArray();
+	}
+	
 
 }

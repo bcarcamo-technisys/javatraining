@@ -29,7 +29,7 @@ public class E02_ArrayList_Mix {
 	private static void printList(List list) {
 		for(int i=0; i<list.size(); i++) {
 			Object value = list.get(i);
-			System.out.println(i + " : " + value.toString() + " - " + value.getClass().toString());
+			System.out.println(i + " : " + value.toString() + " - " + value.getClass().getName());
 		}
 		System.out.println();
 	}

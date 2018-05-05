@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -128,7 +129,7 @@ public class E01_CollectionInterfaces {
 		}
 		
 		Map map1 = new HashMap();
-		Map map2 = new Hashtable();
+		Map map2 = new LinkedHashMap();
 		Map map3 = new TreeMap();
 		
 	}
