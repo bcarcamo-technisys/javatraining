@@ -20,6 +20,14 @@ public class E09_NIOFileSystem {
 		
 		fs.getRootDirectories().forEach(System.out::println);
 		
+		// fs.getPath(first, more)
+		
+		// Blocked File
+		
+		// Partial Load
+		
+		// Attributes
+		
 	}
 
 }

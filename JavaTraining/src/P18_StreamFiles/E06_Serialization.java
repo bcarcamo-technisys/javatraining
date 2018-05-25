@@ -37,7 +37,7 @@ public class E06_Serialization {
 		
 		public void write(T obj, String path) {
 			try(OutputStream out = new FileOutputStream(path);
-				ObjectOutputStream outObject = new ObjectOutputStream(out);) {
+				ObjectOutputStream outObject = new ObjectOutputStream(out)) {
 				
 				outObject.writeObject(obj);
 				
@@ -51,7 +51,7 @@ public class E06_Serialization {
 		@SuppressWarnings("unchecked")
 		public T read(String path) {
 			try(InputStream in = new FileInputStream(path);
-				ObjectInputStream inObject = new ObjectInputStream(in);) {
+				ObjectInputStream inObject = new ObjectInputStream(in)) {
 				
 				return (T) inObject.readObject();
 				

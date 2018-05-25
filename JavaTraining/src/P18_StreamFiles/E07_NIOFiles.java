@@ -23,9 +23,9 @@ public class E07_NIOFiles {
 
 		Path DIR = Paths.get("src", "P18_StreamFiles", "files");
 		
-		Path newDIR = DIR.resolve("testfolder");
+		Path newDIR = DIR.resolve("testfolder"); // cd testfolder ---- cd /tmp
 		
-		if(!Files.exists(newDIR)) {
+		if(Files.notExists(newDIR)) {
 			try {
 				Files.createDirectory(newDIR);
 			} catch (IOException ex) {

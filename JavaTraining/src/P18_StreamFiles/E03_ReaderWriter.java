@@ -21,7 +21,7 @@ public class E03_ReaderWriter {
 				+ "system for developing application software and deploying\n"
 				+ "it in a cross-platform computing environment.\n";
 		
-		CharacterFileUtils.write(text, path, false);
+		CharacterFileUtils.write(text, path, true);
 		CharacterFileUtils.read(path);
 		
 	}
@@ -30,6 +30,12 @@ public class E03_ReaderWriter {
 		
 		public static void write(String text, String path, boolean append) {
 			try(Writer out = new FileWriter(path, append)) {
+				out.write(text);
+				try {
+					Thread.sleep(10_000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 				out.write(text);
 			} catch(FileNotFoundException ex) {
 				System.out.println("File not found");

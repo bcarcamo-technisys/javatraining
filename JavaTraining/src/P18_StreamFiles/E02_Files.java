@@ -54,7 +54,7 @@ public class E02_Files {
 	      .map(dataFile)
 	      .forEach(System.out::println);
 		
-		File folder = new File(cwd.getAbsolutePath(), "files");
+		File folder = new File(cwd, "files");
 		folder.mkdir();
 		
 		File testFile = new File(folder.getAbsolutePath(), "test.txt");
