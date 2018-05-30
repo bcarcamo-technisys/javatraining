@@ -2,6 +2,7 @@ package P16_Streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class E03_MapStream {
 
@@ -12,6 +13,15 @@ public class E03_MapStream {
 		nums.stream().filter(d -> d < 5)
 					 .map(d -> d * d)
 		             .forEach(System.out::println);
+		
+		System.out.println();
+
+		List<String> words = Arrays.asList("zero", "one", "two", "three", "four", 
+				                           "five", "six", "seven", "eight", "nine");
+		
+		words.stream().flatMap(n -> Stream.of(n.split("")))
+                      .forEach(c -> System.out.print(c + "-"));
+
 		
 	}
 

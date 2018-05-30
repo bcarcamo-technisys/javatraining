@@ -12,7 +12,7 @@ public class E05_StreamInputOutput {
 
 	public static void main(String[] args) {
 
-		String DIR = String.join(File.separator, "src", "P18_StreamFiles", "files");
+		String DIR = "files";
 		
 		String srcPath = String.join(File.separator, DIR, "book.pdf");
 		String dstPath = String.join(File.separator, DIR, "book.pdf.bkp");

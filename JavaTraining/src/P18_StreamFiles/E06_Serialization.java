@@ -15,7 +15,7 @@ public class E06_Serialization {
 
 	public static void main(String[] args) {
 		
-		String DIR = String.join(File.separator, "src", "P18_StreamFiles", "files");
+		String DIR = "files";
 		
 		String path = String.join(File.separator, DIR, "person.dat");
 		

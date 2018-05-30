@@ -54,10 +54,10 @@ public class E02_Files {
 	      .map(dataFile)
 	      .forEach(System.out::println);
 		
-		File folder = new File(cwd, "files");
+		File folder = new File("files");
 		folder.mkdir();
 		
-		File testFile = new File(folder.getAbsolutePath(), "test.txt");
+		File testFile = new File(folder, "test.txt");
 		try {
 			testFile.createNewFile();
 		} catch (IOException ex) {
