@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E19_DeadLock {
+public class E16_DeadLock {
 
 	public static void main(String[] args) {
 		

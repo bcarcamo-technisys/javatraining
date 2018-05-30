@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E12_ThreadSynchronizedBlock {
+public class E14_ThreadSynchronizedBlockObject {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -43,7 +43,9 @@ public class E12_ThreadSynchronizedBlock {
 		@Override
 		public void run() {
 			for(int i=0; i<amount; i++) {
-				count.deposit(1);
+				synchronized(count) {
+					count.deposit(1);
+				}
 			}
 		}
 		
@@ -62,7 +64,9 @@ public class E12_ThreadSynchronizedBlock {
 		@Override
 		public void run() {
 			for(int i=0; i<amount; i++) {
-				count.withdraw(1);
+				synchronized(count) {
+					count.withdraw(1);
+				}
 			}
 		}
 		
@@ -73,17 +77,13 @@ public class E12_ThreadSynchronizedBlock {
 		private int money = 0;
 		
 		public void deposit(int amount) {
-			synchronized(this) {
-				money += amount;
-			}
+			money += amount;
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " : " + money + " USD");
 		}
 		
 		public void withdraw(int amount) {
-			synchronized(this) {
-				money -= amount;
-			}
+			money -= amount;
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " : " + money + " USD");
 		}

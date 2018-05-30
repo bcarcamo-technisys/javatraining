@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E16_InterThreadCommunication {
+public class E17_InterThreadCommunication {
 
 	public static void main(String[] args) throws InterruptedException {
 

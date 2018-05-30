@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E14_ThreadSynchronizedStaticBlock {
+public class E12_ThreadSynchronizedStaticMethod {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -72,18 +72,14 @@ public class E14_ThreadSynchronizedStaticBlock {
 		
 		public int money = 0;
 		
-		public static void deposit(Count count, int amount) {
-			synchronized(Count.class) {
-				count.money += amount;
-			}
+		public synchronized static void deposit(Count count, int amount) {
+			count.money += amount;
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " : " + count.money + " USD");
 		}
 		
-		public static void withdraw(Count count, int amount) {
-			synchronized(Count.class) {
-				count.money -= amount;
-			}
+		public synchronized static void withdraw(Count count, int amount) {
+			count.money -= amount;
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " : " + count.money + " USD");
 		}

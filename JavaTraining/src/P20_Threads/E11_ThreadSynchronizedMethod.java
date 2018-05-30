@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E10_ThreadSynchronizedMethod {
+public class E11_ThreadSynchronizedMethod {
 
 	public static void main(String[] args) throws InterruptedException {
 

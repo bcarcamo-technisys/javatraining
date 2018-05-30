@@ -1,6 +1,6 @@
 package P20_Threads;
 
-public class E15_ThreadInterrupt {
+public class E10_ThreadInterrupt {
 
 	public static void main(String[] args) {
 

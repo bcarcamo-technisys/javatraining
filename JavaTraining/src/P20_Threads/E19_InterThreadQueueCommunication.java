@@ -3,7 +3,7 @@ package P20_Threads;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class E17_InterThreadQueueCommunication {
+public class E19_InterThreadQueueCommunication {
 
 	public static void main(String[] args) throws InterruptedException {
 
