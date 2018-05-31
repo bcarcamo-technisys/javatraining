@@ -1,4 +1,4 @@
-package P20_Threads;
+package P21_Concurrent;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class E21_ParallelProcess {
+public class E42_ParallelProcess {
 
 	public static void main(String[] args) {
 

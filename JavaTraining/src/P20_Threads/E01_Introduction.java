@@ -16,8 +16,12 @@ public class E01_Introduction {
 	 *      |
 	 *      V
 	 *   RUNNING     Under Execution of run() method
+	 *  |  |  |  |  |
+	 *  |  |  |  |  #
 	 *  |  |  |  |
-	 *  |  |  |  #
+	 *  |  |  |  |   Thread.yield();
+	 *  |  |  |  |
+	 *  |  |  |  *
 	 *  |  |  |
 	 *  |  |  |      Thread.sleep(Milliseconds, Nanoseconds = 0);
 	 *  |  |  |  
@@ -31,8 +35,6 @@ public class E01_Introduction {
 	 *  |  |
 	 *  |  |         t2.join();
 	 *  |  |         t2.join(Milliseconds, Nanoseconds = 0);
-	 *  |  |        
-	 *  |  |         Thread.yield()
 	 *  |  |
 	 *  |  V
 	 *  | WAITING      

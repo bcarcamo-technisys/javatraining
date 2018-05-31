@@ -18,14 +18,18 @@ public class E09_ThreadPriority {
 		};
 		
 		Thread t1 = new Thread(task, "Printer 1");
-		t1.setPriority(Thread.MAX_PRIORITY);
+		
+		// 10 High Priority
+		t1.setPriority(Thread.MAX_PRIORITY); 
 		
 		Thread t2 = new Thread(task, "Printer 2");
 		
+		// 1 Low Priority
 		Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 		
 		Thread t3 = new Thread(task, "Printer 2");
 		
+		// 5 Default Priority
 		Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
 		
 		t1.start();
