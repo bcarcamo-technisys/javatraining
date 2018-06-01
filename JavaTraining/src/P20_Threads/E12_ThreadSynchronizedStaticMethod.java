@@ -74,14 +74,14 @@ public class E12_ThreadSynchronizedStaticMethod {
 		
 		public synchronized static void deposit(Count count, int amount) {
 			count.money += amount;
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + count.money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + count.money + " USD");
 		}
 		
 		public synchronized static void withdraw(Count count, int amount) {
 			count.money -= amount;
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + count.money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + count.money + " USD");
 		}
 		
 		public String toString() {

@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class E43_Callable {
+public class E09_Callable {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 
@@ -18,12 +18,12 @@ public class E43_Callable {
 		Future<String> r1 = pool.submit(c1);
 		Future<String> r2 = pool.submit(c2);
 		
-		Thread.sleep(10);
+		pool.shutdown();
+		
+		System.out.println("Callable Results");
 		
 		System.out.println(r1.get());
 		System.out.println(r2.get());
-		
-		pool.shutdown();
 		
 	}
 	
@@ -39,6 +39,7 @@ public class E43_Callable {
 		public String call() throws Exception {
 			String result = "";
 			for(int i=0; i<10; i++) {
+				Thread.sleep(1000);
 				result += this.name + ": " + i + "\n";
 			}
 			return result;

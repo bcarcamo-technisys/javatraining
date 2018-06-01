@@ -76,16 +76,16 @@ public class E15_ThreadSynchronizedStaticBlock {
 			synchronized(Count.class) {
 				count.money += amount;
 			}
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + count.money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + count.money + " USD");
 		}
 		
 		public static void withdraw(Count count, int amount) {
 			synchronized(Count.class) {
 				count.money -= amount;
 			}
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + count.money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + count.money + " USD");
 		}
 		
 		public String toString() {

@@ -23,8 +23,6 @@ public class E13_ThreadSynchronizedBlock {
 		t2.join();
 		t3.join();
 		
-		System.out.println();
-		
 		System.out.println("Count1 : " + count1.toString());
 		System.out.println("Count2 : " + count2.toString());
 
@@ -76,16 +74,16 @@ public class E13_ThreadSynchronizedBlock {
 			synchronized(this) {
 				money += amount;
 			}
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public void withdraw(int amount) {
 			synchronized(this) {
 				money -= amount;
 			}
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public String toString() {

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class E42_ParallelProcess {
+public class E08_ParallelProcess {
 
 	public static void main(String[] args) {
 

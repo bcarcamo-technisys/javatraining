@@ -78,14 +78,14 @@ public class E14_ThreadSynchronizedBlockObject {
 		
 		public void deposit(int amount) {
 			money += amount;
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public void withdraw(int amount) {
 			money -= amount;
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public String toString() {

@@ -1,6 +1,8 @@
-package P20_Threads;
+package P21_Concurrent;
 
-public class E11_ThreadSynchronizedMethod {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class E11_Atomic {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -70,18 +72,20 @@ public class E11_ThreadSynchronizedMethod {
 	
 	private static class Count {
 		
-		private int money = 0;
+		private AtomicInteger money = new AtomicInteger();
 		
-		public synchronized void deposit(int amount) {
-			money = money + amount;
+		public void deposit(int amount) {
+			@SuppressWarnings("unused")
+			int value = money.addAndGet(amount);
 			//String name = Thread.currentThread().getName();
-			//System.out.println(name + " : " + money + " USD");
+			//System.out.println(name + " : " + value + " USD");
 		}
 		
-		public synchronized void withdraw(int amount) {
-			money = money - amount;
+		public void withdraw(int amount) {
+			@SuppressWarnings("unused")
+			int value = money.addAndGet(-amount);
 			//String name = Thread.currentThread().getName();
-			//System.out.println(name + " : " + money + " USD");
+			//System.out.println(name + " : " + value + " USD");
 		}
 		
 		public String toString() {

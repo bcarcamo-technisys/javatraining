@@ -63,7 +63,7 @@ public class E18_InterThreadMultiCommunication {
 			
 			synchronized(product) {
 				
-				if(product.value.isEmpty()) {
+				if(product.value == null) {
 					try {
 						product.wait();
 					} catch (InterruptedException e) {

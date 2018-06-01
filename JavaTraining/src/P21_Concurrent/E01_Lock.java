@@ -80,16 +80,16 @@ public class E01_Lock {
 			lock.lock();
 			money += amount;
 			lock.unlock();
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public void withdraw(int amount) {
 			lock.lock();
 			money -= amount;
 			lock.unlock();
-			String name = Thread.currentThread().getName();
-			System.out.println(name + " : " + money + " USD");
+			//String name = Thread.currentThread().getName();
+			//System.out.println(name + " : " + money + " USD");
 		}
 		
 		public String toString() {
