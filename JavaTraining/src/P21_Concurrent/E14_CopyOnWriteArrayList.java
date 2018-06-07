@@ -18,7 +18,7 @@ public class E14_CopyOnWriteArrayList {
 		// Thread Save
 		// Write is made on a copy that is later sync
 		// when many write operations are made is not recommended
-		// Fail -Save
+		// Fail-Save
 		
 		Thread t = new MyThread(cowal);
 		t.start();

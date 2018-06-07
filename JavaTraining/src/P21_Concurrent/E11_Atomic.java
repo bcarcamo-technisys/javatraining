@@ -9,11 +9,11 @@ public class E11_Atomic {
 		Count count1 = new Count();
 		Count count2 = new Count();
 		
-		Thread t0 = new Thread(new CountDeposit(count1, 100), "D1");
-		Thread t1 = new Thread(new CountWithdraw(count1, 50), "W1");
+		Thread t0 = new Thread(new CountDeposit(count1, 100_000), "D1");
+		Thread t1 = new Thread(new CountWithdraw(count1, 50_000), "W1");
 		
-		Thread t2 = new Thread(new CountDeposit(count2, 80), "D2");
-		Thread t3 = new Thread(new CountWithdraw(count2, 20), "W2");
+		Thread t2 = new Thread(new CountDeposit(count2, 80_000), "D2");
+		Thread t3 = new Thread(new CountWithdraw(count2, 20_000), "W2");
 		
 		t0.start();
 		t1.start();

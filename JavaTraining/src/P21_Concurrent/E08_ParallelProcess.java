@@ -32,7 +32,7 @@ public class E08_ParallelProcess {
 				ex.printStackTrace();
 			}
 		
-		final int MAX = 10;
+		final int MAX = 200;
 		for(int i=1; i<MAX; i++) {
 			String fileName = "rfc" + i + ".txt";
 			String url = "https://www.rfc-editor.org/rfc/" + fileName;

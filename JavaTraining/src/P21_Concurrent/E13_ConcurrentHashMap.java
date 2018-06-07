@@ -32,12 +32,15 @@ public class E13_ConcurrentHashMap {
 		
 		chm.put(101, "Juan");
 		chm.put(102, "Jose");
+		chm.put(102, "Andres");
 		
 		chm.putIfAbsent(103, "Luis");
 		chm.putIfAbsent(102, "Pepe");
 		
+		chm.remove(103);
 		chm.remove(101, "Jose");
 		
+		chm.replace(101, "Maria");
 		chm.replace(102, "Pepe", "Ana");
 		
 		chm.forEach((k, v) -> {

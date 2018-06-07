@@ -14,7 +14,7 @@ public class E16_ForkJoinRecursiveAction {
 		
 		LocalDateTime ini = LocalDateTime.now();
 		
-		ForkJoinPool pool = new ForkJoinPool(2);
+		ForkJoinPool pool = new ForkJoinPool(10);
 		pool.submit(f);
 		pool.shutdown();
 		

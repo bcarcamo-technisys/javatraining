@@ -30,8 +30,8 @@ public class E04_ReentrantLockQueue {
 			int queueLength = this.lock.getQueueLength();
 			System.out.println(p.name + " saw the queue with " + queueLength + " people");
 			if(queueLength <= p.tolerance) {
-				this.lock.lock();
 				System.out.println(p.name + " is waiting in the queue");
+				this.lock.lock();
 				timed(2000);
 				System.out.println(p.name + " is paying");
 				this.lock.unlock();
