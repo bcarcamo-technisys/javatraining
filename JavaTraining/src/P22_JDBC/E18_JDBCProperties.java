@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class E17_JDBCProperties {
+public class E18_JDBCProperties {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		

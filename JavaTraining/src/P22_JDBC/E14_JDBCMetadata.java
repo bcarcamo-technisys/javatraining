@@ -2,57 +2,44 @@ package P22_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class E10_JDBCPreparedStatement {
+public class E14_JDBCMetadata {
 
 	public static void main(String[] args) throws SQLException {
-		
-		/*  SQL QUERY EXECUTION - LIFE CYCLE
-		 * 
-		 *            SQL Query                                                           
-		 *  JAVA -------------------> DATABASE ------> COMPILATION --------> TOKENIZATION  
-		 *   APP <-------------------  ENGINE              |    ^                 |
-		 *            ResultSet           ^                |    |                 |  Stream of Tokens
-		 *               or               |                |    | Optimized       V
-		 *           UpdateCount          |                |    | Query        PARSING
-		 *                                |                |    | Tree            |
-		 *                                |                |    |                 |  Query Tree
-		 *                                |                |    |                 V
-		 *                                |                |    ---------- QUERY OPTIMIZATION
-		 *                                |                |
-		 *                                |                V                                                 
-		 *                                ------------ EXECUTION
-		 *                                                 
-		 */ 
-		
 		
 		// Driver is required
 		String connString = getConnectionString();
 		try(Connection conn = DriverManager.getConnection(connString, "root", "roottoor");
 			Scanner console = new Scanner(System.in)) {
 			
-			// Compile Query
-			// As prepared statement is pre-configured with a specific SQL statement, can not be used to execute another SQL statement
-			PreparedStatement pstat = conn.prepareStatement("INSERT INTO users (username, password) VALUES (?, ?)");
-						
+			String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+			PreparedStatement pstat = conn.prepareStatement(sql);
+			
 			System.out.println("USER REGISTRATION");
 			
 			while(true) {
+				String[] data = new String[2];
+				
 				System.out.print("Username: ");
-				String username = console.nextLine();
+				data[0] = console.nextLine();
 				
 				System.out.print("Password: ");
-				String password = console.nextLine();
+				data[1] = console.nextLine();
 				
-				pstat.setString(1, username);
-				pstat.setString(2, password);
+				ParameterMetaData pmd = pstat.getParameterMetaData();
 				
-				// Execute Query
+				int count = pmd.getParameterCount();
+				
+				for(int i=1; i<=count; i++) {
+					pstat.setString(i, data[i-1]);
+				}
+				
 				int rowCount = pstat.executeUpdate();
 				
 				System.out.println(rowCount + " row(s) inserted");

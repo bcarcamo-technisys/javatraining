@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class E16_JDBCBLOB {
+public class E17_JDBCBLOB {
 
 	public static void main(String[] args) {
 		

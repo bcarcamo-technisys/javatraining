@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class E15_JDBCDates {
+public class E16_JDBCDates {
 
 	public static void main(String[] args) throws SQLException {
 		

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class E14_JDBCBatchStatement {
+public class E15_JDBCBatchStatement {
 
 public static void main(String[] args) throws SQLException {
 		

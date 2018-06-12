@@ -16,7 +16,7 @@ public class E04_JDBCQuery {
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		String connString = getConnectionString();
-		try(Connection conn = DriverManager.getConnection(connString, "root", "roottoor")) {
+		try(Connection conn = DriverManager.getConnection(connString)) {
 			
 			Statement stat = conn.createStatement();
 			
@@ -42,7 +42,9 @@ public class E04_JDBCQuery {
 		String host = "localhost";
 		int port = 3306;
 		String database = "World";
-		String options = "useSSL=false";
+		String user = "root";
+		String password = "roottoor";
+		String options = "useSSL=false&user=" + user + "&password=" + password;
 		
 		return String.format("%s://%s:%s/%s?%s", driver, host, port, database, options);
 	}

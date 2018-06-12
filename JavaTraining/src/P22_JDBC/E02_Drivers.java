@@ -28,7 +28,7 @@ public class E02_Drivers {
 		 *     
 		 *  * Type-2 : Native API-Partly Java Driver
 		 *    (OCI Driver use oracle14.jar [Java 1.4] for 10g, oracle6.jar [Java 6] for 11g and oracle7.jar [Java 7] for 12g)
-		 *    - No direct communication with the Database
+		 *    - Direct communication with the Database
 		 *    - Vendor Provider Database Specific native libraries, often developed on C/C++
 		 *    - Better Performance than Type-1 Drivers
 		 *    - Platform and Database Dependent Driver, because use Native Libraries compiled for a specific Platform
@@ -53,7 +53,7 @@ public class E02_Drivers {
 		 *    -----------------------------        ----------        --------
 		 *              CLIENT                         MW               DB
 		 *    
-		 *  * Type-4 : Pure Java Java Driver (Thin Driver / Native Protocol Driver)
+		 *  * Type-4 : Pure Java Driver (Thin Driver / Native Protocol Driver)
 		 *    (oracle.jdbc.OracleDriver)
 		 *    - Platform Independent
 		 *    - All based on java
