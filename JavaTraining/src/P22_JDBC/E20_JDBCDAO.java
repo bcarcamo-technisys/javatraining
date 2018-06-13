@@ -9,7 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
@@ -28,7 +30,8 @@ public class E20_JDBCDAO {
 			
 			conn.createStatement().executeUpdate("TRUNCATE TABLE person");
 			
-			DAO<Person> db = new DAOPerson(conn);
+			//DAO<Person> db = new DAODBPerson(conn);
+			DAO<Person> db = new DAOMemoryPerson();
 		
 			System.out.println("Creating People");
 			db.create(Person.builder().id(1).name("Juan").surname("Sosa").age(36).build());
@@ -72,6 +75,11 @@ public class E20_JDBCDAO {
 		@Override
 		public String toString() {
 			return String.format("(%,d) %s, %s [%,d]", id, surname.toUpperCase(), name, age);
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			return this.id == ((Person) obj).id;
 		}
 		
 		public static PersonBuilder builder() {
@@ -131,11 +139,49 @@ public class E20_JDBCDAO {
 		public void delete(int id) throws SQLException;
 	}
 	
-	private static class DAOPerson implements DAO<Person> {
+	private static class DAOMemoryPerson implements DAO<Person> {
+
+		private List<Person> data = new ArrayList<>();
+		
+		@Override
+		public void create(Person dato) throws SQLException {
+			data.add(dato);
+		}
+		
+		@Override
+		public Person retrive(int id) throws SQLException {
+			Optional<Person> opt =  data.stream().filter(p -> p.id == id).findFirst();
+			return opt.isPresent() ? opt.get() : null;
+		}
+		
+		@Override
+		public List<Person> retriveAll(int limit, int offset) throws SQLException {
+			return data.stream().skip(offset).limit(limit).collect(Collectors.toList());
+		}
+		
+		@Override
+		public List<Person> retriveAll() throws SQLException { 
+			return this.retriveAll(10, 0); 
+		}
+			
+		@Override
+		public void update(Person dato) throws SQLException {
+			data.remove(dato);
+			data.add(dato);
+		}
+		
+		@Override
+		public void delete(int id) throws SQLException {
+			data.remove(Person.builder().id(id).build());
+		}
+		
+	}
+	
+	private static class DAODBPerson implements DAO<Person> {
 
 		private Connection conn;
 		
-		public DAOPerson(Connection conn) throws SQLException {
+		public DAODBPerson(Connection conn) throws SQLException {
 			this.conn = conn;
 		}
 		
@@ -228,7 +274,7 @@ public class E20_JDBCDAO {
 		}
 		
 	}
-	
+
 	private static class MyDataSource {
 		
 		public static DataSource get(String propPath) {

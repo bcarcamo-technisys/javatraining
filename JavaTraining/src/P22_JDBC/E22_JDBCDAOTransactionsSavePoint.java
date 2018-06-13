@@ -46,9 +46,7 @@ public class E22_JDBCDAOTransactionsSavePoint {
 				sp = conn.setSavepoint();
 				
 				db.update(db.retrive(1).rebuild().name("Juan Carlos").build());
-				
 				db.create(Person.builder().id(2).name("Maria").surname("Ahumada").age(15).build());
-				
 				db.delete(3);
 				
 				conn.releaseSavepoint(sp);

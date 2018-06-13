@@ -39,9 +39,9 @@ public class E23_JDBCDAOTransactionsIsolationsLevels {
      *  - Prevented Non-Repeatable Reads Isolation Transactions Problem
 	 *  - Prevented Phantom Reads Isolation Transactions Problem
 	 *  
-	 *  Oracle Database only support 2 and 8 Transaction Isolation Levels
-	 *  MySql Database only support 1, 2, 4 and 8 Transaction Isolation Levels 
-	 *  
+	 *  Oracle Database only support 2 (default) and 8 Transaction Isolation Levels
+	 *  MySql Database only support 1, 2, 4 (default) and 8 Transaction Isolation Levels 
+	 *  SQLServer Database only support 1, 2 (default), 4 and 8 Transaction Isolation Levels
 	 */
 	
 	public static void main(String[] args) {

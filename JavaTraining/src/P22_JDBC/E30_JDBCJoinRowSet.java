@@ -22,7 +22,7 @@ public class E30_JDBCJoinRowSet {
 		String xmlpath = "files/countrycities.xml";
 		
 		RowSet rs1 = MyRowSet.get(prop);
-		rs1.setCommand("SELECT code, name, continent, region FROM country LIMIT 2");
+		rs1.setCommand("SELECT code, name, continent, region FROM country LIMIT 3");
 		rs1.execute();
 		
 		RowSet rs2 = MyRowSet.get(prop);

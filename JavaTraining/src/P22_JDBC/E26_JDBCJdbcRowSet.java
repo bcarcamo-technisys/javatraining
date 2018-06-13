@@ -33,6 +33,8 @@ public class E26_JDBCJdbcRowSet {
 		if(rs.first()) { printRecord(rs); }
 		if(rs.last()) { printRecord(rs); }
 		
+		rs.close();
+		
 	}
 	
 	private static void printRecord(RowSet rs) throws SQLException {

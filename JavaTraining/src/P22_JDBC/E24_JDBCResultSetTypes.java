@@ -17,11 +17,11 @@ public class E24_JDBCResultSetTypes {
 
 	/*
 	 *  ResultSet Types
-	 *  * Based on Operation Types
+	 *  * Based on Operation Mode
 	 *    - READ_ONLY
 	 *    - UPDATABLE
 	 *  
-	 *  * Based on Cursor Movement
+	 *  * Based on Cursor Movement Type
 	 *    - FORWARD_ONLY
 	 *    - SCROLL
 	 *      > SCROLL_SENSITIVE
@@ -37,6 +37,7 @@ public class E24_JDBCResultSetTypes {
 		String prop = "files/config_netec.properties";
 		
 		try(Connection conn = MyDataSource.get(prop).getConnection()) {
+			conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
 			
 			System.out.println("DEFAULT RESULTSET TYPE");
 			Statement stat = conn.createStatement();
@@ -64,6 +65,8 @@ public class E24_JDBCResultSetTypes {
 		
 		try(Connection conn = MyDataSource.get(prop).getConnection();
 			Connection conn1 = MyDataSource.get(prop).getConnection()) {
+			conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+			conn1.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
 			
 			System.out.println("SCROLL INSENSITIVE RESULTSET TYPE");
 			Statement stat = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -98,6 +101,8 @@ public class E24_JDBCResultSetTypes {
 
 		try(Connection conn = MyDataSource.get(prop).getConnection();
 			Connection conn1 = MyDataSource.get(prop).getConnection()) {
+			conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+			conn1.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
 			
 			System.out.println("SCROLL SENSITIVE RESULTSET TYPE");
 			Statement stat = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
@@ -226,7 +231,7 @@ public class E24_JDBCResultSetTypes {
 			System.out.println("HOLD CURSOR RESULTSET HOLDABILITY");
 			Statement stat = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,
                                                   ResultSet.CONCUR_READ_ONLY,
-                                                  ResultSet.HOLD_CURSORS_OVER_COMMIT);
+                                                  ResultSet.CLOSE_CURSORS_AT_COMMIT);
 			System.out.println("Holdability: " + getResultSetHoldability(stat));
 			
 			stat.executeUpdate("TRUNCATE TABLE person");

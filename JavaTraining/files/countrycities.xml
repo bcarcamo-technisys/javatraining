@@ -45,7 +45,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/jdbc http://java.sun.com/xml/ns/j
       <schema-name></schema-name>
       <column-precision>3</column-precision>
       <column-scale>0</column-scale>
-      <table-name>country LIMIT 2#city</table-name>
+      <table-name>country LIMIT 3#city</table-name>
       <catalog-name>world</catalog-name>
       <column-type>1</column-type>
       <column-type-name>CHAR</column-type-name>
@@ -64,7 +64,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/jdbc http://java.sun.com/xml/ns/j
       <schema-name></schema-name>
       <column-precision>52</column-precision>
       <column-scale>0</column-scale>
-      <table-name>country LIMIT 2</table-name>
+      <table-name>country LIMIT 3</table-name>
       <catalog-name>world</catalog-name>
       <column-type>1</column-type>
       <column-type-name>CHAR</column-type-name>
@@ -83,7 +83,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/jdbc http://java.sun.com/xml/ns/j
       <schema-name></schema-name>
       <column-precision>13</column-precision>
       <column-scale>0</column-scale>
-      <table-name>country LIMIT 2</table-name>
+      <table-name>country LIMIT 3</table-name>
       <catalog-name>world</catalog-name>
       <column-type>1</column-type>
       <column-type-name>CHAR</column-type-name>
@@ -102,7 +102,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/jdbc http://java.sun.com/xml/ns/j
       <schema-name></schema-name>
       <column-precision>26</column-precision>
       <column-scale>0</column-scale>
-      <table-name>country LIMIT 2</table-name>
+      <table-name>country LIMIT 3</table-name>
       <catalog-name>world</catalog-name>
       <column-type>1</column-type>
       <column-type-name>CHAR</column-type-name>
@@ -147,6 +147,46 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/jdbc http://java.sun.com/xml/ns/j
     </column-definition>
   </metadata>
   <data>
+    <currentRow>
+      <columnValue>AGO</columnValue>
+      <columnValue>Angola</columnValue>
+      <columnValue>Africa</columnValue>
+      <columnValue>Central Africa</columnValue>
+      <columnValue>Namibe</columnValue>
+      <columnValue>118200</columnValue>
+    </currentRow>
+    <currentRow>
+      <columnValue>AGO</columnValue>
+      <columnValue>Angola</columnValue>
+      <columnValue>Africa</columnValue>
+      <columnValue>Central Africa</columnValue>
+      <columnValue>Benguela</columnValue>
+      <columnValue>128300</columnValue>
+    </currentRow>
+    <currentRow>
+      <columnValue>AGO</columnValue>
+      <columnValue>Angola</columnValue>
+      <columnValue>Africa</columnValue>
+      <columnValue>Central Africa</columnValue>
+      <columnValue>Lobito</columnValue>
+      <columnValue>130000</columnValue>
+    </currentRow>
+    <currentRow>
+      <columnValue>AGO</columnValue>
+      <columnValue>Angola</columnValue>
+      <columnValue>Africa</columnValue>
+      <columnValue>Central Africa</columnValue>
+      <columnValue>Huambo</columnValue>
+      <columnValue>163100</columnValue>
+    </currentRow>
+    <currentRow>
+      <columnValue>AGO</columnValue>
+      <columnValue>Angola</columnValue>
+      <columnValue>Africa</columnValue>
+      <columnValue>Central Africa</columnValue>
+      <columnValue>Luanda</columnValue>
+      <columnValue>2022000</columnValue>
+    </currentRow>
     <currentRow>
       <columnValue>AFG</columnValue>
       <columnValue>Afghanistan</columnValue>
