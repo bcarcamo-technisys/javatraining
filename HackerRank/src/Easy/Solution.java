@@ -1,14 +1,12 @@
 package Easy;
 
 import java.io.*;
-import java.lang.reflect.*;
-import java.util.*;
-import java.util.regex.*;
 import java.security.*;
 
 
 public class Solution {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		DoNotTerminate.forbidExit();	
 
@@ -28,6 +26,8 @@ public class Solution {
 			System.out.println("Unsuccessful Termination!!");
 		}
 	}//end of main
+	
+	@SuppressWarnings("unused")
 	static class Inner{
 		private class Private{
 			private String powerof2(int num){

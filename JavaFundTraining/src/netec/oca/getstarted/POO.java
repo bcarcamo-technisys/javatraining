@@ -2,6 +2,7 @@ package netec.oca.getstarted;
 
 public class POO {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		System.out.println(Persona.getCounter());

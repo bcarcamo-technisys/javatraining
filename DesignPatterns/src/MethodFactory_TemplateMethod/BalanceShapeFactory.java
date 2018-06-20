@@ -1,10 +1,10 @@
 package MethodFactory_TemplateMethod;
 
 import java.util.Random;
-import java.util.stream.Stream;
 
 public class BalanceShapeFactory implements ShapeFactory {
 
+	@SuppressWarnings("unused")
 	private int[] shapes = new int[ShapeFactory.SHAPES.length];
 	
 	@Override

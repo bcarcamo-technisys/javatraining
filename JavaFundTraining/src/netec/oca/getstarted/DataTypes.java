@@ -4,6 +4,7 @@ import java.math.BigInteger;
 
 public class DataTypes {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		// 1Byte

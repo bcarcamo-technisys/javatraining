@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class RevertArray {
 
 	static int[] reverseArray(int[] a) {
-		
+		return new int[10];
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);  
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		int arrCount = Integer.parseInt(scanner.nextLine().trim());

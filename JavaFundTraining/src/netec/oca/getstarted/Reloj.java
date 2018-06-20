@@ -12,6 +12,7 @@ import java.util.Locale;
 
 public class Reloj {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		Date d1 = new Date();

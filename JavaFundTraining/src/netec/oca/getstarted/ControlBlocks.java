@@ -2,6 +2,7 @@ package netec.oca.getstarted;
 
 public class ControlBlocks {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		boolean married = true;

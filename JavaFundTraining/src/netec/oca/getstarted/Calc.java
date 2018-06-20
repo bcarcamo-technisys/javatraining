@@ -34,7 +34,7 @@ public class Calc {
 
 }
 
-
+@SuppressWarnings("serial")
 class OddNumberException extends ArithmeticException {
 	
 	public OddNumberException() {
