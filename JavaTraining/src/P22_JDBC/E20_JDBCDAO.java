@@ -177,6 +177,7 @@ public class E20_JDBCDAO {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private static class DAODBPerson implements DAO<Person> {
 
 		private Connection conn;
