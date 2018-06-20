@@ -8,7 +8,6 @@ public class InfiniteConsoleAdder {
 	// Metodos / Funciones
 	// Control (if/switch)
 	
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		String num1, num2, result;

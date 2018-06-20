@@ -2,7 +2,6 @@ package BasicPooShape;
 
 public class MainPoo {
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Circle c1 = new Circle(1);
 		System.out.println(c1.toString() + ":" + c1.getType() + ":" + c1.getArea());
