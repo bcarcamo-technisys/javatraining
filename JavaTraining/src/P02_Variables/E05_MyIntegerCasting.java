@@ -10,7 +10,7 @@ public class E05_MyIntegerCasting {
 		
 		// Assigning native 'byte' value from new Byte Wrapper Object
 		// The integer value must be casted to 'byte' for the Wrapper Object Creation
-		byte myByte = new Byte((byte) 100);
+		byte myByte = Byte.valueOf((byte) 100);
 		System.out.printf("The Byte value %,d%n", myByte);
 		short myShortByte = myByte;
 		System.out.printf("Promoted to Short: %,d %n", myShortByte);
@@ -21,7 +21,7 @@ public class E05_MyIntegerCasting {
 		
 		// Assigning native 'short' value from new Short Wrapper Object
 		// The integer value must be casted to 'short' for the Wrapper Object Creation
-		short myShort = new Short((short) 10000);
+		short myShort = Short.valueOf((short) 10000);
 		System.out.printf("The Short value %,d%n", myShort);
 		byte myByteShort = (byte) myShort;
 		System.out.printf("Casted to Byte: %,d (%,d * %,d + %,d)%n", 
@@ -33,7 +33,7 @@ public class E05_MyIntegerCasting {
 		
 		// Assigning native 'int' value from new Integer Wrapper Object
 		// The integer value doesn't require casting for the Wrapper Object Creation
-		int myInteger = new Integer(1000000000);
+		int myInteger = Integer.valueOf(1000000000);
 		System.out.printf("The Integer value %,d%n", myInteger);
 		byte myByteInteger = (byte) myInteger;
 		System.out.printf("Casted to Byte: %,d (%,d * %,d + %,d)%n", 
@@ -46,7 +46,7 @@ public class E05_MyIntegerCasting {
 		
 		// Assigning native 'long' value from new Long Wrapper Object
 		// The long value doesn't require casting for the Wrapper Object Creation
-		long myLong = new Long(1000000000000000000L);
+		long myLong = Long.valueOf(1000000000000000000L);
 		System.out.printf("The Long value %,d%n", myLong);
 		byte myByteLong = (byte) myLong;
 		System.out.printf("Casted to Byte: %,d (%,d * %,d + %,d)%n", 

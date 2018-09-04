@@ -19,9 +19,12 @@ public class E07_Consumer {
 			printer = LowerCasePrinter;
 			printer.accept(text);
 			
+			printer = EnterPrinter;
+			printer.accept(text);
+			
 			printer = UpperCasePrinter;
 			printer.accept(text);
-				
+			
 		}
 		
 	}
@@ -46,5 +49,7 @@ public class E07_Consumer {
 	};
 
 	private static final Consumer<String> UpperCasePrinter  = t -> System.out.println(t.toUpperCase());
+	
+	private static final Consumer<String> EnterPrinter  = __ -> System.out.println();
 
 }

@@ -6,6 +6,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 
 public class E06_TearDownClassTest {
 	
@@ -37,6 +38,7 @@ public class E06_TearDownClassTest {
 	}
 	
 	@Test
+	@Ignore
 	public void addTest_AddCero() {
 		// Act
 		int result = accu.add(0);

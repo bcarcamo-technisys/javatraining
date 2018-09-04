@@ -15,7 +15,7 @@ public class TextFieldTemplatePane extends TemplatePane {
 		textFieldIn = new TextField("Initial Value");
 		textFieldIn.setPromptText("This TextField will be clean when press ENTER");
 		textFieldIn.setMinSize(100, 50);
-		textFieldIn.setOnAction(ae -> copyInfo());
+		textFieldIn.setOnAction(ae -> clean());
 		
 		textFieldOut = new TextField();
 		textFieldOut.setPromptText("All that you type in the other TextField will copy here automatically");
@@ -32,7 +32,7 @@ public class TextFieldTemplatePane extends TemplatePane {
 		setCenter(layout);
 	}
 	
-	private void copyInfo() {
+	private void clean() {
 		textFieldIn.setText("");
 	}
 

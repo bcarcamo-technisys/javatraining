@@ -1,5 +1,7 @@
 package P26_Reflexion;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class E03_ClassMultiInstance {
 
 	public static void main(String[] args) {
@@ -9,8 +11,8 @@ public class E03_ClassMultiInstance {
 		try {
 			
 			printerClass = Class.forName("P26_Reflexion.Hello");
-			printer1 = (Printable) printerClass.newInstance();
-			printer2 = (Printable) printerClass.newInstance();
+			printer1 = (Printable) printerClass.getDeclaredConstructor().newInstance();
+			printer2 = (Printable) printerClass.getDeclaredConstructor().newInstance();
 			System.out.println(printerClass.getName());
 			
 			System.out.println();
@@ -20,7 +22,10 @@ public class E03_ClassMultiInstance {
 			
 			System.out.println(printer1 == printer2);
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

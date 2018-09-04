@@ -18,6 +18,23 @@ public class E02_FilterStream {
 		             .filter(d -> d % 3 == 0)
 		             .forEach(System.out::print);
 		
+		System.out.println();
+		
+		nums.stream().limit(6)
+                     .forEach(System.out::print);
+
+		System.out.println();
+		
+		// JAVA9
+		//nums.stream().takeWhile(d -> d < 5)
+        //           .forEach(System.out::print);
+		
+		System.out.println();
+		
+		// JAVA9
+		//nums.stream().dropWhile(d -> d < 5)
+        //           .forEach(System.out::print);
+		
 	}
 
 }

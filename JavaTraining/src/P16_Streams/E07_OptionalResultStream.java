@@ -24,7 +24,12 @@ public class E07_OptionalResultStream {
 		else
 			System.out.println("Not value found");
 		
-		int dato = nums.stream().filter(d -> d < 10).findFirst().orElse(10); 
+		nums.stream().filter(d -> d > 5).findFirst().ifPresent(System.out::println);;
+		
+		// JAVA9
+		//nums.stream().filter(d -> d > 10).findFirst().ifPresentOrElse(System.out::println, () -> System.out.println("Not value found"));	
+		
+		int dato = nums.stream().filter(d -> d > 3).findFirst().orElse(10); 
 		System.out.println(dato);
 		
 		dato = nums.stream().filter(d -> d > 10).findFirst().orElse(10); 
@@ -32,6 +37,11 @@ public class E07_OptionalResultStream {
 		
 		dato = nums.stream().filter(d -> d > 10).findFirst().orElseGet(() -> 11); 
 		System.out.println(dato);
+		
+		// JAVA9
+		//dato = nums.stream().filter(d -> d > 10).findFirst().or(() -> Optional.of(12)).get(); 
+		System.out.println(dato);
+		
 		
 		dato = nums.stream().filter(d -> d > 10).findFirst().orElseThrow(() -> new RuntimeException("Value not found")); 
 		System.out.println(dato);

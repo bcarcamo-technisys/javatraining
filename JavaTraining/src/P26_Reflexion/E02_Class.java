@@ -1,5 +1,7 @@
 package P26_Reflexion;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class E02_Class {
 
 	public static void main(String[] args) {
@@ -10,14 +12,14 @@ public class E02_Class {
 		try {
 			
 			printerClass = Class.forName("P26_Reflexion.Hello");
-			printer = (Printable) printerClass.newInstance();
+			printer = (Printable) printerClass.getDeclaredConstructor().newInstance();
 			printer.print();
 			System.out.println(printerClass.getName());		
 			
 			System.out.println();
 			
 			printerClass = Class.forName("P26_Reflexion.E02_Class$Bye");
-			printer = (Printable) printerClass.newInstance();
+			printer = (Printable) printerClass.getDeclaredConstructor().newInstance();
 			printer.print();
 			System.out.println(printerClass.getName());	
 			
@@ -25,7 +27,10 @@ public class E02_Class {
 			
 			System.out.println(Class.forName("java.util.ArrayList").getName());
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

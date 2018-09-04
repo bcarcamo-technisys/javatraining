@@ -1,5 +1,6 @@
 package P26_Reflexion;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
@@ -13,7 +14,7 @@ public class E07_ClassMethods {
 			
 			Class<?> objClass = Class.forName("P26_Reflexion.TalkLoud");
 			
-			TalkLoud talker = (TalkLoud) objClass.newInstance();
+			TalkLoud talker = (TalkLoud) objClass.getDeclaredConstructor().newInstance();
 			talker.set("Hello");
 			talker.print();
 			System.out.println(objClass.getName());		
@@ -28,7 +29,10 @@ public class E07_ClassMethods {
 			meths = Class.forName("java.util.ArrayList").getMethods();
 			Arrays.asList(meths).forEach(m -> describe(m));
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

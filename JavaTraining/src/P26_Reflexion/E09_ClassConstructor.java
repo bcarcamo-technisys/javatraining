@@ -1,6 +1,7 @@
 package P26_Reflexion;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
@@ -13,7 +14,7 @@ public class E09_ClassConstructor {
 			
 			Class<?> objClass = Class.forName("P26_Reflexion.Employee");
 			
-			Person emp = (Person) objClass.newInstance();
+			Person emp = (Person) objClass.getDeclaredConstructor().newInstance();
 			emp.describe();
 			System.out.println(objClass.getName());		
 			
@@ -27,7 +28,10 @@ public class E09_ClassConstructor {
 			ctors = Class.forName("java.util.ArrayList").getConstructors();
 			Arrays.asList(ctors).forEach(c -> describe(c));
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

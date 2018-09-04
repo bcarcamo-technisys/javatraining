@@ -1,5 +1,6 @@
 package P26_Reflexion;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
 public class E04_ClassInterfaces {
@@ -10,7 +11,7 @@ public class E04_ClassInterfaces {
 			
 			Class<?> objClass = Class.forName("P26_Reflexion.Talk");
 			
-			Object obj = objClass.newInstance();
+			Object obj = objClass.getDeclaredConstructor().newInstance();
 			Settable setter = (Settable) obj;
 			setter.set("Hello");
 			Printable printer = (Printable) obj;
@@ -27,7 +28,10 @@ public class E04_ClassInterfaces {
 			inter = Class.forName("java.util.ArrayList").getInterfaces();
 			Arrays.asList(inter).forEach(i -> System.out.println(i.getName()));
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

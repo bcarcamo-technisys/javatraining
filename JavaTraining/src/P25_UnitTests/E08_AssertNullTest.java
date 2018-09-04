@@ -53,7 +53,7 @@ public class E08_AssertNullTest {
 		Integer result = oper.add(0, 0);
 		
 		// Assert
-		Assert.assertEquals(new Integer(0), result);
+		Assert.assertEquals(Integer.valueOf(0), result);
 	}
 	
 	@Test
@@ -62,7 +62,7 @@ public class E08_AssertNullTest {
 		Integer result = oper.add(2, 2);
 		
 		// Assert
-		Assert.assertEquals(new Integer(4), result);
+		Assert.assertEquals(Integer.valueOf(4), result);
 	}
 	
 	@Test
@@ -71,7 +71,7 @@ public class E08_AssertNullTest {
 		Integer result = oper.add(-2, -3);
 		
 		// Assert
-		Assert.assertEquals(new Integer(-5), result);
+		Assert.assertEquals(Integer.valueOf(-5), result);
 	}
 	
 	@Test
@@ -80,7 +80,7 @@ public class E08_AssertNullTest {
 		Integer result = oper.add(4, -3);
 		
 		// Assert
-		Assert.assertEquals(new Integer(1), result);
+		Assert.assertEquals(Integer.valueOf(1), result);
 	}
 	
 	@Test

@@ -30,7 +30,7 @@ public class FirstWindow extends Application implements EventHandler<ActionEvent
 		
 		StackPane layout = new StackPane();
 		layout.getChildren().add(button);
-		layout.getChildren().add(buttonClose);
+		//layout.getChildren().add(buttonClose);
 		
 		Scene scene = new Scene(layout, 300, 300);
 		mainStage.setScene(scene);

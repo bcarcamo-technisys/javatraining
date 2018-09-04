@@ -14,7 +14,7 @@ public class E01_MyFirstMessage {
 		System.out.print("Algunas consideraciones que deben tener en cuenta son:\n\n");
 		
 		// Printing info in the console with TAB
-		System.out.println("\t\u25A0 1. Practique todos los conocimiento adquiridos");
+		System.out.println("\t■ 1. Practique todos los conocimiento adquiridos");
 		System.out.println("\t" + '\u25A0' + " 2. Investigue en Internet y complemente su conocimiento");
 		System.out.println("\t\u25A0 " + 3 + ". Tenga mente abierta para aprender conocimientos núevos\n");
 				

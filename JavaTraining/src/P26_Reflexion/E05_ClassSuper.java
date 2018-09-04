@@ -1,5 +1,7 @@
 package P26_Reflexion;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class E05_ClassSuper {
 
 	public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class E05_ClassSuper {
 			
 			Class<?> objClass = Class.forName("P26_Reflexion.TalkLoud");
 			
-			Object obj = objClass.newInstance();
+			Object obj = objClass.getDeclaredConstructor().newInstance();
 			Settable setter = (Settable) obj;
 			setter.set("Hello");
 			Printable printer = (Printable) obj;
@@ -28,7 +30,10 @@ public class E05_ClassSuper {
 				objClass = objClass.getSuperclass();
 			} while(objClass != null);
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException    | InstantiationException   | 
+				 IllegalAccessException    | IllegalArgumentException | 
+				 InvocationTargetException | NoSuchMethodException    | 
+				 SecurityException e) {
 			e.printStackTrace();
 		}
 		

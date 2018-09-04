@@ -1,15 +1,28 @@
 package P21_Concurrent;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class E18_ParallelStream {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
+		IntStream.range(0, 10).forEach(n -> System.out.println(Thread.currentThread().getName() + " : " + n));
+		
+		System.out.println();
+		
+		IntStream.range(0, 10).parallel().forEach(n -> System.out.println(Thread.currentThread().getName() + " : " + n));
+		
+		System.out.println();
 		
 		List<Integer> values = getValues();
 		
@@ -79,6 +92,11 @@ public class E18_ParallelStream {
 		result = values.stream().parallel().filter(d -> d % 2 == 0).findAny().get();
 		
 		System.out.printf("Result: %,d\n", result);
+		
+		System.out.println();
+		
+		Path path = Paths.get("files/myFile.txt");
+		Files.lines(path).parallel().forEach(l -> System.out.println(Thread.currentThread().getName() + " : " + l));
 		
 	}
 	

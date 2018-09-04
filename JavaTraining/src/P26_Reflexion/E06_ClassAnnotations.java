@@ -5,6 +5,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
 public class E06_ClassAnnotations {
@@ -15,7 +16,7 @@ public class E06_ClassAnnotations {
 			
 			Class<?> objClass = Class.forName("P26_Reflexion.TalkTooLoud");
 			
-			TalkLoud talker = (TalkLoud) objClass.newInstance();
+			TalkLoud talker = (TalkTooLoud) objClass.getDeclaredConstructor().newInstance();
 			talker.set("Hello");
 			talker.print();
 			System.out.println(objClass.getName());		
@@ -30,7 +31,10 @@ public class E06_ClassAnnotations {
 			annos = Class.forName("java.util.function.Predicate").getAnnotations();
 			Arrays.asList(annos).forEach(a -> System.out.println("> " + a));
 			
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		} catch (ClassNotFoundException   | InstantiationException   | 
+				IllegalAccessException    | IllegalArgumentException | 
+				InvocationTargetException | NoSuchMethodException    | 
+				SecurityException e) {
 			e.printStackTrace();
 		}
 		
