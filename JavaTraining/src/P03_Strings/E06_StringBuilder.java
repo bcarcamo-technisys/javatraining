@@ -1,6 +1,6 @@
 package P03_Strings;
 
-public class E05_StringBuilder {
+public class E06_StringBuilder {
 
 	public static void main(String[] args) {
 		

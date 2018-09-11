@@ -18,6 +18,20 @@ public class Program {
 		
 		System.out.println(p1.nombre.equals(p2.nombre));
 		
+		byte l = (byte) p1.nombre.length();
+		
+		p1.nombre.equals(p2.nombre);
+		
+		// p1.nombre == p2.nombre;
+		
+		p1.nombre.equalsIgnoreCase(p2.nombre);
+		
+		p1.nombre.substring(1, 3);
+		
+		int c = p1.nombre.charAt(2);
+		
+		System.out.println(c);
+		
 	}
 
 }
