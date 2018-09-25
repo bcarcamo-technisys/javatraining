@@ -12,13 +12,12 @@ public class E04_EmailValidator {
 		 * Rules:
 		 * - Only one @
 		 * - Only letter, numbers and some special symbols (#!$%&'*+-/=?^_`{}|~) are allowed in the local-part (NOT VERIFIED)
-		 * - not numbers are allowed in the domain-part
 		 * - not consecutive dots are allowed (NOT VERIFIED)
 		 * - could not start with dot, dash or numbers 
 		 * - almost one dot must be present in the domain part
 		 * - almost 2 characters must be between dots in the domain-part
 		 * - the last dot in the domain-part must be almost 2 characters away from the end
-		 * - not numbers are allowed in the domain-par (NOT VERIFIED)
+		 * - not numbers are allowed in the domain-part (NOT VERIFIED)
 		 *  
   		 */
 		

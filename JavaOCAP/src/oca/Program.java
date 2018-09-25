@@ -32,6 +32,20 @@ public class Program {
 		
 		System.out.println(c);
 		
+		p1.nombre.compareTo(p2.nombre);
+		
+		p1.nombre.indexOf('a');
+		
+		p1.nombre.lastIndexOf('a');
+		
+		p1.nombre.isEmpty();
+		
+		p1.nombre.toLowerCase();
+		
+		p1.nombre.toUpperCase();
+		
+		String.valueOf(true);
+		
 	}
 
 }
